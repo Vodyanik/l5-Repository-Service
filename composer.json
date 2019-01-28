@@ -1,0 +1,23 @@
+{
+  "name": "vodyanik/repository",
+  "description": "This is laravel package for creating repositories and services",
+  "authors": [
+    {
+      "name": "vodyanik.artur",
+      "email": "vodyanik.artur@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Vodyanik\\Repository\\": "src/Vodyanik/Repository/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Vodyanik\\Repository\\RepositoryServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev"
+}
