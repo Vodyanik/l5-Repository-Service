@@ -71,7 +71,7 @@ class Repository extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace . '\Http\Repositories';
+        return $rootNamespace . '\\' . config('repository-service.repositoryPath');
     }
 
     /**
@@ -93,10 +93,16 @@ class Repository extends GeneratorCommand
      */
     protected function buildRepositoryReplacements()
     {
-        $name = $this->argument('name');
+        $name                        = $this->argument('name');
+        $modelPath                   = config('repository-service.modelPath');
+        $namespaceRepository         = config('repository-service.repositoryPath');
+        $namespaceCRepository        = config('repository-service.repositoryContractPath');
 
         return [
-            'DummyName' => $name
+            'DummyName'            => $name,
+            'ModelPath'            => $modelPath,
+            'NamespaceRepository'  => $namespaceRepository,
+            'NamespaceCRepository' => $namespaceCRepository
         ];
     }
 

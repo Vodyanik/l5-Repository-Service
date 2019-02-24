@@ -52,7 +52,7 @@ class ServiceContract extends GeneratorCommand
 
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace . '\Http\Contracts\Services';
+        return $rootNamespace . '\\' . config('repository-service.serviceContractPath');
     }
 
     protected function buildClass($name)
@@ -66,10 +66,12 @@ class ServiceContract extends GeneratorCommand
 
     protected function buildParentReplacements()
     {
-        $name = $this->argument('name');
+        $name              = $this->argument('name');
+        $namespaceCService = config('repository-service.serviceContractPath');
 
         return [
-            'DummyName' => $name
+            'DummyName'         => $name,
+            'NamespaceCService' => $namespaceCService
         ];
     }
 }

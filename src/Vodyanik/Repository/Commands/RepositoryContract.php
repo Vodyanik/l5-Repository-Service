@@ -56,7 +56,7 @@ class RepositoryContract extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace . '\Http\Contracts\Repositories';
+        return $rootNamespace . '\\' . config('repository-service.repositoryContractPath');
     }
 
     /**
@@ -78,10 +78,12 @@ class RepositoryContract extends GeneratorCommand
      */
     protected function buildRepositoryContractReplacements()
     {
-        $name = $this->argument('name');
+        $name                        = $this->argument('name');
+        $namespaceRepositoryContract = config('repository-service.repositoryContractPath');
 
         return [
-            'DummyName' => $name
+            'DummyName'                   => $name,
+            'NamespaceRepositoryContract' => $namespaceRepositoryContract
         ];
     }
 }

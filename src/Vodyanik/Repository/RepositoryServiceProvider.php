@@ -30,6 +30,14 @@ class RepositoryServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands($this->commands);
         }
+
+        $this->publishes([
+            __DIR__.'/Config/repository-service.php' => config_path('repository-service.php'),
+        ]);
+
+        $this->mergeConfigFrom(
+            __DIR__.'/Config/repository-service.php', 'repository-service'
+        );
     }
 
     /**

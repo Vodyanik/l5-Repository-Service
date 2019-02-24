@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Repositories;
+namespace App\NamespaceRepository;
 
-use App\DummyName as Model;
-use App\Http\Contracts\Repositories\DummyNameRepository as RepositoryContract;
+use App\ModelPath\DummyName as Model;
+use App\NamespaceCRepository\DummyNameRepository as RepositoryContract;
 
 class DummyNameRepository implements RepositoryContract
 {

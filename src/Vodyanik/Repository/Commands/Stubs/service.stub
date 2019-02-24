@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Services;
+namespace App\NamespaceService;
 
-use App\Http\Contracts\Services\DummyNameService as ServiceContract;
-use App\Http\Contracts\Repositories\DummyNameRepository as Repository;
+use App\NamespaceCService\DummyNameService as ServiceContract;
+use App\NamespaceCRepository\DummyNameRepository as Repository;
 
 class DummyNameService implements ServiceContract
 {
